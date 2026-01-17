@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google" content="notranslate">
+
+  <title>مدرسہ بلال حبشی – دینی تعلیم</title>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-green: #1f6f4a;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Jameel Noori Nastaleeq', serif;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--white);
+      padding: 20px 20px 10px;
+      text-align: center;
+      opacity: 0;
+      animation: headerFadeIn 1.5s forwards;
+    }
+
+    @keyframes headerFadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid var(--primary-green);
+      padding: 8px;
+      object-fit: contain;
+      animation: logoGlow 4s ease-in-out infinite;
+      margin-top: 0px;
+      size: 250px;
+    }
+
+    @keyframes logoGlow {
+      0% { box-shadow: 0 0 0 rgba(31,111,74,0.2); }
+      50% { box-shadow: 0 0 18px rgba(31,111,74,0.55); }
+      100% { box-shadow: 0 0 0 rgba(31,111,74,0.2); }
+    }
+
+    .logo-name {
+      margin-top: 5px;
+      width: 199px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .tagline {
+      margin-top: -5px;
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--primary-green);
+    }
+
+    .header-line {
+      margin-top: 15px; 
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(90deg, rgba(31,111,74,1), rgba(31,111,74,0.5), rgba(31,111,74,1));
+      background-size: 200% 100%;
+      animation: lineSlide 2s forwards;
+    }
+
+    @keyframes lineSlide {
+      0% { background-position: 200% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    /* ABOUT MADARSA */
+    .about-section {
+      padding: 40px 20px;
+      direction: rtl;
+      text-align: center;
+    }
+
+    .glow-box {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      border-radius: 15px;
+      background-color: #ffffff;
+      padding: 30px 25px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .glow-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 3px;
+      border-radius: 15px;
+      background: linear-gradient(
+        120deg,
+        rgba(31,111,74,1),
+        rgba(31,111,74,0.4),
+        rgba(31,111,74,1)
+      );
+      background-size: 400% 400%;
+      animation: borderGlow 6s ease-in-out infinite;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* TIMING BOX */
+    .timing-section {
+      padding: 40px 20px;
+      text-align: center;
+      direction: rtl;
+    }
+
+    .timing-box {
+      max-width: 650px;
+      margin: 0 auto 40px;
+      border-radius: 15px;
+      background-color: #ffffff;
+      padding: 30px 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timing-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 3px;
+      border-radius: 15px;
+      background: linear-gradient(
+        120deg,
+        var(--primary-green),
+        rgba(31,111,74,0.2),
+        var(--primary-green)
+      );
+      background-size: 400% 400%;
+      animation: borderGlow 8s ease-in-out infinite;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* HEADINGS & TEXT */
+    .box-title {
+      font-size: 33px;
+      color: var(--primary-green);
+      margin-bottom: 25px;
+      border-bottom: 2px solid var(--primary-green);
+      display: inline-block;
+      padding-bottom: 5px;
+      font-family: 'Jameel Noori Nastaleeq', serif;
+    }
+
+    .box-text {
+      font-size: 24px;
+      line-height: 2;
+      color: #333;
+      text-align: center;
+      margin-bottom: 15px;
+      padding: 0 10px;
+      font-family: 'Jameel Noori Nastaleeq', serif;
+    }
+
+    .timing-text .timing-item {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .timing-text .timing-item h3 {
+      font-size: 30px;
+      color: var(--primary-green);
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      background: var(--primary-green);
+      color: var(--white);
+      text-align: center;
+      padding: 18px 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: 'Jameel Noori Nastaleeq', serif;
+    }
+
+    @media (max-width: 600px) {
+      .box-title { font-size: 28px; }
+      .box-text { font-size: 18px; }
+      .timing-text .timing-item h3 { font-size: 22px; }
+      .tagline { font-size: 20px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <img src="logo.png" alt="مدرسہ بلال حبشی کا لوگو" class="logo" />
+      <img src="naam.png" alt="مدرسہ کا نام" class="logo-name" />
+      <div class="tagline">مقام ہشام آباد کراچی</div>
+      <div class="header-line"></div>
+    </div>
+  </header>
+
+  <!-- ABOUT MADARSA SECTION -->
+  <section class="about-section" id="about">
+    <div class="glow-box">
+      <h2 class="box-title">مدرسہ بلال حبشی کے بارے میں</h2>
+
+      <p class="box-text">
+        مدرسہ بلال حبشی ایک معتبر دینی و تعلیمی ادارہ ہے جہاں طلباء کو قرآنِ پاک کی ناظرہ، حفظ، قاعدہ، اور تقریر کی تعلیم دی جاتی ہے۔
+      </p>
+
+      <p class="box-text">
+        مدرسہ کے سرپرست، مولانا فہیم، تجربہ کار استاد ہیں جو طلباء کی علمی اور اخلاقی تربیت میں رہنمائی کرتے ہیں۔
+      </p>
+
+      <p class="box-text">
+        ہمارے کورسز میں شامل ہیں: حفظِ قرآن، ناظرہ قرآن، قاعدہ، اور تقریر۔ ہر طالب علم کی ترقی، نظم و ضبط اور اخلاقی تربیت ہماری اولین ترجیح ہے۔
+      </p>
+
+      <p class="box-text">
+        مدرسہ کا مقصد طلباء کو دینی علم اور عملی مہارت کے ساتھ مضبوط شخصیت فراہم کرنا ہے تاکہ وہ اپنے خاندان اور معاشرت میں مثبت کردار ادا کرسکیں۔
+      </p>
+    </div>
+  </section>
+
+  <!-- TIMING SECTION -->
+  <section class="timing-section" id="timing">
+    <div class="timing-box">
+
+      <h2 class="box-title">مدرسہ کی اوقاتِ تعلیم</h2>
+
+      <div class="box-text timing-text">
+
+        <div class="timing-item">
+          <h3 >حفظ القرآن</h3>
+          صبح 8:00 بجے سے دوپہر 12:00 بجے تک<br>
+          12:00 سے 2:00 بجے تک آرام اور دوپہر کا کھانا<br>
+          2:00 سے 4:00 بجے تک دوبارہ تعلیم
+        </div>
+
+        <div class="timing-item">
+          <h3>ناظرہ قرآن</h3>
+          دوپہر 2:00 بجے سے شام 4:00 بجے تک
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- LOCATION AND CONTACT BOXES SIDE BY SIDE -->
+<section class="timing-section" id="info" style="display: flex; justify-content: center; gap: 100px; flex-wrap: wrap;">
+  
+  <!-- LEFT BOX: LOCATION -->
+  <div class="timing-box" style="width: 400px; margin: 0;">
+    <h2 class="box-title">مقام مدرسہ</h2>
+    <div class="box-text">
+      پلاٹ نمبر 22، ہشام آباد بلاک 2، گلزارِ ہجری سکیم 33، کراچی،
+      <br> پاکستان
+    </div>
+  </div>
+
+ <!-- RIGHT BOX: CONTACT -->
+<div class="timing-box" style="width: 400px; margin: 0;">
+  <h2 class="box-title">رابطہ</h2>
+
+  <div class="box-text">
+    فون نمبر: 03323876624
+<br>
+<a href="email.html" style="
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 25px;
+    background-color: #1f6f4a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 29px;
+    font-family: 'Jameel Noori Nastaleeq', serif;
+  ">
+    ای میل
+  </a>
+</div>
+
+
+      
+    </div>
+  </div>
+
+</section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <h5>© 2026 MADARSA BILAL HABSHI | DESIGNED AND DEVELOPED BY MUHAMMAD KHAZIN SHAHID !</h5>
+  </footer>
+
+</body>
+</html>
